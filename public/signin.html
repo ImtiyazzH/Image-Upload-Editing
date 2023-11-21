@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up Form | The Kitchies</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="signin.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<body>
+    <div id="main-body">
+        <div class="form-container">
+            <div class="right">
+                <div class="login-signup">
+                    <h1 id="signup"><a href="#">Sign Up</a></h1>
+                    <h1 id="login"><a href="login.html">Log In</a></h1>
+                </div>
+
+                <form id="formSection">
+                    <div>
+                        <label>Enter Your Name</label>
+                        <div class="f-l-name">
+                            <input type="text" placeholder="First Name" id="fname">
+                            <input type="text" placeholder="Last Name" id="lname">
+                        </div>
+                    </div>
+                    <div>
+                        <label>Enter Your Email</label>
+                        <input type="email" placeholder="Eg. abc@example.com" id="email">
+
+                    </div>
+                    <div>
+                        <label>Enter Your Password</label>
+                        <input type="password" placeholder="Password" id="password">
+
+                    </div>
+                    <div>
+                        <h3>Already Have An Account? <a href="login.html">Log In</a></h3>
+                        <button type="submit" id="submitButton">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+        import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyD9WxZThlrkS48k6opx59JcfAgQ6q6BA4o",
+            authDomain: "webyapar-solutions-pvt-ltd.firebaseapp.com",
+            projectId: "webyapar-solutions-pvt-ltd",
+            storageBucket: "webyapar-solutions-pvt-ltd.appspot.com",
+            messagingSenderId: "1015874021267",
+            appId: "1:1015874021267:web:f48c380d28bae625682a66"
+        };
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase();
+        const auth = getAuth(app);
+
+        let fname = document.getElementById("fname");
+        let lname = document.getElementById("lname");
+        let email = document.getElementById("email");
+        let password = document.getElementById("password");
+
+        let RegisterUser = evt => {
+            evt.preventDefault();
+            createUserWithEmailAndPassword(auth, email.value, password.value)
+                .then((credentials) => {
+                    alert("User Created. Kindly go to login page to access the main page")
+                    set(ref(db, 'UsersAuthList/' + credentials.user.uid), {
+                        firstname: fname.value,
+                        lastname: lname.value
+                    })
+                })
+                .catch((error) => {
+                    alert(error.message);
+                    console.log(error.code);
+                    console.log(error.message);
+                })
+        }
+        formSection.addEventListener('submit', RegisterUser);
+
+
+      
+
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,227 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: url(images/img.avif);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.form-container {
+    height: 100%;
+    width: 100%;
+    margin: 15px auto;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.right {
+    width: 45%;
+    border: 5px solid black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    background: white;
+}
+
+.login-signup {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border-bottom: 5px solid black;
+}
+
+.login-signup h1 {
+    width: 50%;
+    padding: 7px;
+    text-align: center;
+}
+.login-signup h1 a {
+    width: 50%;
+    padding: 7px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+#signup {
+    border-right: 4px solid black;
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+#login:hover {
+    background-color: lightcyan;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#formSection {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 10px;
+}
+
+#formSection div {
+    display: flex;
+    flex-direction: column;
+}
+
+#formSection div label {
+    font-size: 1.8rem;
+    font-weight: 700;
+    border: 2px solid grey;
+    border-bottom: none;
+    width: 100%;
+    display: block;
+    padding: 4px;
+    text-align: center;
+}
+
+#formSection div input {
+    background: transparent;
+    border: 2px solid grey;
+    font-size: 1.5rem;
+    width: 100%;
+    color: rgb(90, 88, 88);
+    padding: 5px;
+}
+
+#formSection div input:focus {
+    outline: none;
+    background: transparent;
+    color: rgb(94, 92, 92);
+}
+
+#formSection div div {
+    display: flex;
+    flex-direction: row;
+}
+
+.f-l-name input {
+    background: transparent;
+    border: 2px solid grey;
+    font-size: 1.5rem;
+    width: 50%;
+    color: rgb(90, 88, 88);
+    padding: 5px;
+}
+
+.f-l-name input:focus {
+    background: transparent;
+    outline: none;
+    color: rgb(98, 95, 95);
+}
+
+#submitButton {
+    padding: 5px;
+    font-weight: 800;
+    font-size: 1.8rem;
+    width: 45%;
+    margin: 3px auto;
+    background: rgb(166, 116, 55);
+    border-radius: 50px;
+    align-items: center;
+    border: none;
+    color: whitesmoke;
+}
+
+#submitButton:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#formSection div h3 {
+    color: grey;
+    margin: 3px;
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: center;
+    padding: 1px 0px 10px;
+    gap: 0.5rem;
+}
+
+#formSection div h3 a {
+    color: rgb(56, 56, 65);
+    text-decoration: none;
+}
+#formSection div h3 a:hover {
+    text-decoration: underline
+}
+
+.social-media {
+    display: flex;
+    margin: auto;
+}
+
+.left {
+    width: 45%;
+    gap: 1rem;
+}
+.left a {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 90%;
+    background-color: rgb(139, 135, 135);
+    border: 2px solid black;
+    padding:5px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: white;
+    margin: 10px 0px;
+    text-decoration: none;
+    border-radius: 50%;
+    gap: 1rem;
+}
+
+.left a i {
+    font-size: 2rem;
+    color: rgb(29, 28, 28);
+}
+
+
+
+@media (max-width : 900px) {
+    .login-signup h1 {
+        font-size: 1.4rem;
+    }
+
+    #formSection div label {
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+    #formSection div input {
+        font-size: 1.2rem;
+    }
+    #formSection div h3 {
+        font-size: 1rem;
+    }
+    #submitButton {
+        padding: 3px 10px;
+        width: max-content;
+        font-size: 1.4rem;
+        margin: 0px auto;
+    }
+    .right {
+        width: 90%;
+    }
+}

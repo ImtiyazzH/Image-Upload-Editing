@@ -1,0 +1,91 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+#mainbody{
+  background: black;
+  color: white;
+  min-height: 100vh;
+  min-width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  gap: 2rem;
+  padding: 15px;
+  background: #9c9595;
+  color: white;
+}
+
+/* profile */
+.profile-name{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.1rem;
+}
+.profile-name span{
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.dropdown {
+  display: inline-block;
+  margin: auto 2px;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0px;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: max-content;
+  padding: 5px 10px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 8px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Images */
+.gallery-image {
+  margin: 10px;
+}
+
+.gallery-image img {
+  max-width: 95%;
+  height: auto;
+  margin: auto;
+}
+
+#imageGallery {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+}
+
+@media (max-width : 500px) {
+  header h1{
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery with Cropping</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="cropper.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body>
+  <div id="mainbody">
+    <header>
+      <h1 style="margin: auto 5px;">WEBYAPAR SOLUTIONS PVT. LTD.</h1>
+      <div class="profile" style="margin: auto 5px;">
+        <div class="profile-name">
+          <span id="fname"></span>
+          <span id="lname"></span>
+        </div>
+        <div class="dropdown">
+          <i class='bx bx-caret-down profileicon dropbtn' onclick="toggleDropdown()"></i>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="signin.html" id="signIn">Sign In </a>
+            <a href="login.html" id="logIn">Log In</a>
+            <a href="login.html" id="logOut">Log Out</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container mt-5" id="upload">
+        <input type="file" id="imageInput" accept="image/*" class="form-control mb-2">
+        <button onclick="cropImage()" class="btn btn-primary">Upload & Crop</button>
+
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h1 style="margin: 10px auto; text-align: center; color: whitesmoke; text-decoration: underline;">IMAGE GALLERY</h1>
+      <div class="row mt-4" id="imageGallery"></div>
+    </section>
+
+    <!-- Modal for Image Cropping -->
+    <div class="modal fade" id="cropModal" tabindex="-1" role="dialog" aria-labelledby="cropModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cropModalLabel">Crop Image</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="" id="cropperImage" style="max-width: 100%;" alt="Croppable Image">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="cropImage()">Crop</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="cropper.min.js"></script>
+  <script src="scripts.js"></script>
+
+
+</body>
+
+</html>
